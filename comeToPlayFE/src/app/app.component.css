@@ -1,0 +1,44 @@
+#divLoginCenter {
+  position:fixed;
+  top: 50%;
+  left: 50%;
+  width:30em;
+  height:18em;
+  text-align: center;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+}
+#divLoginCenterImage {
+  position:fixed;
+  top: 22%;
+  left: 50%;
+  width:30em;
+  height:13em;
+  text-align: center;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+  background-image: url("../img/pisgatZeeveImage1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.displayCenterInput{
+  text-align: center;
+  -webkit-margin-before: 1em;
+  display: block;
+  font-size: 1em;
+}
+.displayCenterDropdown{
+  width: 186px;
+  -webkit-margin-before: 1em;
+  display: block;
+  font-size: 1em;
+
+}
+
+#fontSizeLogIn{
+  font-size: 22px;
+}
+
+.spanLinkSignUp{
+  color: blue;
+}

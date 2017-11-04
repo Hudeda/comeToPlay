@@ -1,7 +1,55 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="ui-g-12 ui-md-4">
-  <div class="ui-inputgroup">
-    <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-    <input type="text" pInputText placeholder="Username">
+<div id ="divLoginCenterImage"></div>
+<div id="divLoginCenter">
+  <div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-12"><h2>User Name:</h2></div>
+
+    <div class="ui-g-12 ui-md-6"><h3>User Name:</h3></div>
+    <div class="ui-g-12 ui-md-6">
+      <input type="text" placeholder="Username" class="displayCenterInput"></div>
+
+    <div class="ui-g-12 ui-md-6"><h3>Password: </h3></div>
+    <div class="ui-g-12 ui-md-6"><input  placeholder="Password" class="displayCenterInput" type="password"/></div>
   </div>
+
+  <div class="ui-g-12 ui-md-12"><button pButton type="button" label="Sign-in"></button></div>
+  <div class="ui-g-12 ui-md-12"><span class="spanLinkSignUp" (click)="signUpClick()">Sign-Up</span></div>
+
 </div>
+
+
+<p-dialog [(visible)]="signUpFlag" >
+
+  <p-header>
+    Sign-Up Form
+  </p-header>
+  <div id ="formSignUp" class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-3"><h4>First Name:</h4></div>
+    <div class="ui-g-12 ui-md-3">
+      <input type="text" placeholder="First Name" class="displayCenterInput"></div>
+
+    <div class="ui-g-12 ui-md-3"><h4>Last Name:</h4></div>
+    <div class="ui-g-12 ui-md-3">
+      <input type="text" placeholder="Last Name" class="displayCenterInput"></div>
+
+    <div class="ui-g-12 ui-md-3"><h4>Email: </h4></div>
+    <div class="ui-g-12 ui-md-3"><input  placeholder="Email@example.com" class="displayCenterInput" type="email"/></div>
+
+    <div class="ui-g-12 ui-md-3"><h4>Department: </h4></div>
+    <div class="ui-g-12 ui-md-3">
+      <p-dropdown [autoWidth]="false" class="displayCenterDropdown" [options]="department" [(ngModel)]="selectedDepartment" optionField="name"></p-dropdown>
+    </div>
+
+
+    <div class="ui-g-12 ui-md-3"><h4>Password: </h4></div>
+    <div class="ui-g-12 ui-md-3"><input  placeholder="Password" class="displayCenterInput" type="password"/></div>
+
+    <div class="ui-g-12 ui-md-3"><h4>Confirm Password: </h4></div>
+    <div class="ui-g-12 ui-md-3"><input  placeholder="Password" class="displayCenterInput" type="password"/></div>
+
+  </div>
+  <p-footer>
+    <button pButton type="button" label="Sign-Up" (click)="signUpSave()"></button>
+    <button pButton type="button" (click)="signUpCancel()" label="Cancel" class="ui-button-secondary"></button>
+  </p-footer>
+</p-dialog>
