@@ -4,8 +4,6 @@ package io.swagger.api;
 import io.swagger.model.Event;
 import io.swagger.annotations.*;
 
-import io.swagger.model.JoinUserParams;
-import io.swagger.model.User;
 import io.swagger.services.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
