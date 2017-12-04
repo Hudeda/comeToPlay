@@ -6,6 +6,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.List;
 import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
+
 import javax.validation.Valid;
 
 /**
@@ -30,10 +33,10 @@ public class Event   {
   private User creater = null;
 
   @JsonProperty("dateCreated")
-  private DateTime dateCreated = null;
+  private LocalDate dateCreated = null;
 
   @JsonProperty("eventDate")
-  private DateTime eventDate = null;
+  private String eventDate = null;
 
   public Event id(String id) {
     this.id = id;
@@ -145,11 +148,6 @@ public class Event   {
     this.creater = creater;
   }
 
-  public Event dateCreated(DateTime dateCreated) {
-    this.dateCreated = dateCreated;
-    return this;
-  }
-
    /**
    * Get dateCreated
    * @return dateCreated
@@ -158,15 +156,15 @@ public class Event   {
 
   @Valid
 
-  public DateTime getDateCreated() {
+  public LocalDate getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(DateTime dateCreated) {
+  public void setDateCreated(LocalDate dateCreated) {
     this.dateCreated = dateCreated;
   }
 
-  public Event eventDate(DateTime eventDate) {
+  public Event eventDate(String eventDate) {
     this.eventDate = eventDate;
     return this;
   }
@@ -179,11 +177,11 @@ public class Event   {
 
   @Valid
 
-  public DateTime getEventDate() {
+  public String getEventDate() {
     return eventDate;
   }
 
-  public void setEventDate(DateTime eventDate) {
+  public void setEventDate(String eventDate) {
     this.eventDate = eventDate;
   }
 
