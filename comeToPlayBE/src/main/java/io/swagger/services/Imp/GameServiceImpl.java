@@ -4,6 +4,8 @@ import io.swagger.model.Games;
 import io.swagger.repositories.GameRepository;
 import io.swagger.services.GameServics;
 import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,7 +18,7 @@ public class GameServiceImpl implements GameServics {
     @Override
     public void createGame(Games games) {
         games.setGameTime(new DateTime());
-        games.getCreater().setDateCreated(new DateTime());
+        games.getCreater().setDateCreated(LocalDate.now());
         gameRepository.save(games);
     }
 

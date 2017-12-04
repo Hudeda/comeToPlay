@@ -4,6 +4,9 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
+import org.joda.time.LocalDate;
+import org.joda.time.LocalDateTime;
+
 import javax.validation.Valid;
 
 /**
@@ -37,7 +40,10 @@ public class User   {
   private Integer userStatus = null;
 
   @JsonProperty("dateCreated")
-  private DateTime dateCreated = null;
+  private LocalDate dateCreated = null;
+
+  @JsonProperty("department")
+  private String department = null;
 
   public User id(String id) {
     this.id = id;
@@ -199,7 +205,7 @@ public class User   {
     this.userStatus = userStatus;
   }
 
-  public User dateCreated(DateTime dateCreated) {
+  public User dateCreated(LocalDate dateCreated) {
     this.dateCreated = dateCreated;
     return this;
   }
@@ -212,14 +218,20 @@ public class User   {
 
   @Valid
 
-  public DateTime getDateCreated() {
+  public LocalDate getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(DateTime dateCreated) {
+  public void setDateCreated(LocalDate dateCreated) {
     this.dateCreated = dateCreated;
   }
+  public String getDepartment() {
+    return department;
+  }
 
+  public void setDepartment(String department) {
+    this.department = department;
+  }
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -238,12 +250,13 @@ public class User   {
         Objects.equals(this.password, user.password) &&
         Objects.equals(this.phone, user.phone) &&
         Objects.equals(this.userStatus, user.userStatus) &&
+        Objects.equals(this.department, user.department) &&
         Objects.equals(this.dateCreated, user.dateCreated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, username, firstName, lastName, email, password, phone, userStatus, dateCreated);
+    return Objects.hash(id, username, firstName, lastName, email, password, phone, userStatus, dateCreated, department);
   }
 
   @Override
@@ -259,6 +272,7 @@ public class User   {
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    phone: ").append(toIndentedString(phone)).append("\n");
     sb.append("    userStatus: ").append(toIndentedString(userStatus)).append("\n");
+    sb.append("    department: ").append(toIndentedString(department)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("}");
     return sb.toString();
