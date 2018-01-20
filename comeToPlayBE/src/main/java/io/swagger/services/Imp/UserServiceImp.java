@@ -16,7 +16,8 @@ public class UserServiceImp implements UserService {
     @Autowired
     private PasswordService passwordService;
 
-    public void saveUser(User user){
+    @Override
+    public void saveUser(User user) {
         user.setDateCreated(LocalDate.now());
         user.setPassword(passwordService.encrypt(user.getPassword()));
         userRepository.save(user);
